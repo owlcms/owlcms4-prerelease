@@ -2,7 +2,8 @@
 
 > **NOTE: This repository contains [prerelease binary distributions](https://github.com/owlcms/owlcms4-prerelease/releases) of owlcms. <br>
 > The source repository is located at [https://github.com/jflamy/owlcms4](https://github.com/jflamy/owlcms4)** <br>
-> See below for documentation and support.
+> See below for documentation and support.<br>
+> Official releases are located [here](https://github.com/owlcms/owlcms4).
 <br />
 
 
