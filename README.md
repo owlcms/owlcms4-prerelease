@@ -20,10 +20,11 @@ See the prerelease [Web Site](https://owlcms.github.io/owlcms4-prerelease/#) for
 Refer to the [Installation Overview](https://owlcms.github.io/owlcms4-prerelease/#/InstallationOverview) and
 to the following [page](Releases.md) for the various setups and releases.
 
-### Support
+### Help, Issues, Feature Requests
 
 - [Discussion list](https://groups.google.com/forum/#!forum/owlcms)  If you wish to discuss the program or ask questions, please add yourself to this discussion [group](https://groups.google.com/forum/#!forum/owlcms).  You can withdraw at any time.
-- [Issues and Feature Requests](https://github.com/jflamy/owlcms4/projects/1) This shows what we are working on, and our work priorities. To open an issue or make a request, use the Issues link at the top.
+- [Issues and Feature Requests](https://github.com/jflamy/owlcms4/issues) To open an issue or make a request, use that link.
+- [Work in Progress and Priorities](https://github.com/users/jflamy/projects/2/views/7) Shows what we are working on and what is currently planned.
 
 ### Licensing and Notes
 
