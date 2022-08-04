@@ -14,10 +14,8 @@ It has been used to manage national championships and even continental champions
 Yet it is simple enough to setup that you can use it to run a club or regional competition.
 
 ### Features, Documentation and Installation
-
-See the prerelease [Web Site](https://owlcms.github.io/owlcms4-prerelease/#) for a full overview</u>.  
-
-Refer to the [Installation Overview](https://owlcms.github.io/owlcms4-prerelease/#/InstallationOverview) and
+- See the prerelease [Web Site](https://owlcms.github.io/owlcms4-prerelease/#) for a full overview</u>.  
+- Refer to the [Installation Overview](https://owlcms.github.io/owlcms4-prerelease/#/InstallationOverview) and
 to the following [page](Releases.md) for the various setups and releases.
 
 ### Help, Issues, Feature Requests
