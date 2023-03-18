@@ -1,20 +1,28 @@
 # OWLCMS - Olympic Weightlifting Competition Management System 
+
+> **NOTES:**
+>   - This repository contains **[prerelease binary distributions](https://github.com/owlcms/owlcms4-prerelease/releases)** of owlcms.
+>     - Stable releases are located [here](https://github.com/owlcms/owlcms4/releases).<br>
+>   - [Extensive Documentation](https://owlcms.github.io/owlcms4-prerelease/#) is available.
+>   - The source repository is located at [https://github.com/jflamy/owlcms4](https://github.com/jflamy/owlcms4) (report issues there).
+<br />
+
 This free application is a fully-compliant weightlifting competition management system. 
 
-It is being used worldwide to manage national championships and even continental championships.
+It has been used to manage national championships and even continental championships, worldwide.
 
 Yet it is simple enough to setup that you can use it to run a club or regional competition.
 
-
 ### Features, Documentation and Installation
-- See the application **[Web Site](https://owlcms.github.io/owlcms4-prerelease/#)** for a full overview and extensive documentation.
-- Refer to the [Installation Overview](https://owlcms.github.io/owlcms4-prerelease/#/InstallationOverview) and to the [Downloads](https://owlcms.github.io/owlcms4-prerelease/#/Downloads) page for the various setups and releases.
+- See the prerelease [Web Site](https://owlcms.github.io/owlcms4-prerelease/#) for a full overview</u>.
+- Refer to the [Installation Overview](https://owlcms.github.io/owlcms4-prerelease/#/InstallationOverview) and
+to the following [Downloads]((https://owlcms.github.io/owlcms4-prerelease/#/Downloads) page for the various setups and releases.
 
 ### Help, Issues, Feature Requests
 
 - [Discussion list](https://groups.google.com/forum/#!forum/owlcms)  If you wish to discuss the program or ask questions, please add yourself to this discussion [group](https://groups.google.com/forum/#!forum/owlcms).  You can withdraw at any time.
 - [Issues and Feature Requests](https://github.com/jflamy/owlcms4/issues) To open an issue or make a request, use that link.
-- [Work in Progress and Priorities](https://github.com/jflamy/owlcms4/projects/1) Shows what we are working on and what is currently planned.
+- [Work in Progress and Priorities](https://github.com/users/jflamy/projects/2/views/7) Shows what we are working on and what is currently planned.
 
 ### Licensing and Notes
 
