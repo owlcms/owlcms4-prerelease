@@ -2322,14 +2322,16 @@ public class FieldOfPlay {
 			getAthleteTimer().stop();
 		}
 //        setState(DOWN_SIGNAL_VISIBLE);
+		Athlete prev = ed.getAthlete();
 		this.setClockOwner(null);
-		DecisionFullUpdate ne = new DecisionFullUpdate(ed.getOrigin(), ed.getAthlete(), ed.ref1, ed.ref2, ed.ref3, now,
+		DecisionFullUpdate ne = new DecisionFullUpdate(ed.getOrigin(), prev, ed.ref1, ed.ref2, ed.ref3, now,
 		        now, now, isAnnouncerDecisionImmediate());
 		setRefereeForcedDecision(true);
 		updateRefereeDecisions(ne);
 		uiShowUpdateOnJuryScreen(ed);
+		
 		// needed to make sure 2min rule is triggered
-		this.setPreviousAthlete(getCurAthlete());
+		this.setPreviousAthlete(prev);
 		this.setClockOwnerInitialTimeAllowed(0);
 	}
 
