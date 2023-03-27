@@ -1,5 +1,10 @@
-38.2.0 Additional attempt board information, Revised Athlete Editing form, Personal bests
+38.3.0 Document Preparation and Results downloads fixed
 
+- 38.3 Fixes
+  - In versions 38.1-rc, 38.1 and 38.2, downloading documents could either fail or work, unpredictably. The change that allowed processing .xslx documents has been undone, and we are back to the previous version using the .xls format.
+
+  - When acting as a solo referee, there was a time window where entering a change would cause a faulty calculation of the previous athlete and a 2:00 clock would be given by mistake. 
+  
 - 38.2 Documentation Changes
   - Documentation: Heroku cloud installation is now deprecated. Heroku has broken the easy one-click installation process as it was used by owlcms.  The documentation has been updated to show the "official" command-line installation process which is much more complicated.  We now recommend using fly.io as the installation is much simpler and owlcms can be run for free (it is below their monthly minimum for processing a bill.)
 
