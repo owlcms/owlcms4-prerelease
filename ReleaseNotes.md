@@ -1,19 +1,24 @@
-38.1.0-beta Additional attempt board information, Revised Athlete Editing form, Personal bests
+38.3.0 Document Preparation and Results downloads fixed
+
+- 38.3 Fixes
+  - In versions 38.1-rc, 38.1 and 38.2, downloading documents could either fail or work, unpredictably. The change that allowed processing .xslx documents has been undone, and we are back to the previous version using the .xls format.
+
+  - When acting as a solo referee, there was a time window where entering a change would cause a faulty calculation of the previous athlete and a 2:00 clock would be given by mistake. 
+  
+- 38.2 Documentation Changes
+  - Documentation: Heroku cloud installation is now deprecated. Heroku has broken the easy one-click installation process as it was used by owlcms.  The documentation has been updated to show the "official" command-line installation process which is much more complicated.  We now recommend using fly.io as the installation is much simpler and owlcms can be run for free (it is below their monthly minimum for processing a bill.)
 
 - 38.1 Enhancements
-  - 38.1.0-beta04:  The jury members can now vote again during a deliberation break. The decision lights are reset when deliberation starts so the post-video vote is a secret vote.  A new MQTT message (`fop/juryDeliberation`) has been added so devices know when to reset the jury lights.
-  - The editing page for athlete registration and weigh-in has been redone to be more readable and better organized.  The old editing forms are available (temporarily) by enabling the `oldAthleteForm` [Feature Toggle](https://owlcms.github.io/owlcms4-prerelease/#/FeatureToggles).
+  - The editing page used for athlete registration and weigh-in has been redone to be more readable and better organized.
   - It is now possible to add personal bests for athletes, which are displayed along with records. Personal bests are for information and not highlighted like official records.  Personal bests are read from and exported on the registration spreadsheets.
   - The attempt board now shows the athlete category and the lift type.  If you only want to see the attempt number, leave the `AttemptBoard_lift_attempt_number` translation empty.
-  - The announcer "refresh list" button has been renamed to "Reload Group". It reloads the group completely (same as exiting and re-entering the group). This also sends a refresh signal to all displays. This is useful if for some reason it is necessary to edit athlete registration information.
   - The gender letters used for displaying *age groups* and *categories* are no longer fixed to `M` and `F` and can now be translated (for example, Germany could choose to use U17 D instead of U17 F)
+  - The jury members can now vote again during a deliberation break. The decision lights are reset when deliberation starts so the post-video vote is a secret vote.  A new MQTT message (`fop/juryDeliberation`) has been added so devices know when to reset the jury lights.
+  - The announcer "refresh list" button has been renamed to "Reload Group". It reloads the group completely (same as exiting and re-entering the group). This also sends a refresh signal to all displays. This is useful if for some reason it is necessary to edit athlete registration information.
+  - If a `.xlsx` template is available for a report, it will be used, and the report will be in that format.  All recent versions of Office/OpenOffice/LibreOffice support that format.  If both .xls and .xlsx templates are present, the .xlsx is given precedence.
   - Switched the demo site back to Heroku (https://owlcms.herokuapp.com).
 - 38.1 Fixes
-  - 38.1.0-beta03: updating an athlete could fail due to a broken validation.  This would also prevent the ENTER shortcut from working.
-  - 38.1.0-beta02: Attempt board now correctly switches from snatch to clean&jerk.
-  - 38.1.0-alpha04: Fixed edge cases when all records were excluded for an invited athlete
   - The total of the last snatch athlete was being shown during the clean & jerk break on the "current athlete" video streaming footer.
-  
 
 ##### Highlights from recent stable releases
 
@@ -29,11 +34,11 @@
 
 ### **Installation Instructions**
 
-  - For **Windows**, download `owlcms_setup_38.1.0-beta04.exe` from the Assets section below and follow [Windows Stand-alone Installation](https://owlcms.github.io/owlcms4-prerelease/#/LocalWindowsSetup)
+  - For **Windows**, download `owlcms_setup_38.3.0-beta01.exe` from the Assets section below and follow [Windows Stand-alone Installation](https://owlcms.github.io/owlcms4-prerelease/#/LocalWindowsSetup)
 
     > If you get a window with `Windows protected your PC`, or if your browser gives you warnings, please see this [page](https://owlcms.github.io/owlcms4-prerelease/#/DefenderOff)
 
-  - For **Linux** and **Mac OS**, download the `owlcms_38.1.0-beta04.zip` file from the Assets section below and follow [Linux or Mac Stand-alone Installation](https://owlcms.github.io/owlcms4-prerelease/#/LocalLinuxMacSetup)
+  - For **Linux** and **Mac OS**, download the `owlcms_38.3.0-beta01.zip` file from the Assets section below and follow [Linux or Mac Stand-alone Installation](https://owlcms.github.io/owlcms4-prerelease/#/LocalLinuxMacSetup)
 
   - For **Cloud PaaS** installs, no download is necessary. Follow the [Heroku](https://owlcms.github.io/owlcms4-prerelease/#Heroku) or (recommended) **[Fly.io](https://owlcms.github.io/owlcms4-prerelease/#Fly)** installation instructions.
 
