@@ -1,12 +1,16 @@
-**Version 49.0.1**
+**Version 49.0.2**
 
 > [!IMPORTANT]
 >
 > - You should test all releases, with actual data, several days before a competition. 
 
-- (49.0.1) Loading a registration file with English headers now works when the database has another language selected by default.
+- (49.0.2) Enhancement: if a session is known to start in the future, the default countdown will be to the introduction at the planned time without needing to change settings.
+- (49.0.2) Fix for a rare case of unjustified weight change denial. On a 1:00 clock, if an athlete declared the same weight as their automatic declaration, and that weight happened to be the same as that already requested by the current athlete, then the change would be denied.  Now fixed.
+- (49.0.2) Fix: Importing a database JSON export that includes a zip for local overrides now applies correctly the zipped overrides. In the last several releases the zip had to be loaded separately after import.
+- (49.0.2) Fix: the `agegroupinfo.formattedRange` now correctly handles situations where athletes have not been assigned an A/B/C annotation.
+- (49.0.1) Fix: Loading a registration file with English headers now works when the database has another language selected by default.
 - (49.0.1) Fix: The current athlete display used for videos would occasionally display the scoreboard status from the previous athlete. 
-- (49.0.1) Technical:  An improved implementation of the athlete and break timers is now enabled by default in this release.  In the very unlikely event you want the old behavior back use the `oldTimers` [Feature toggle](https://owlcms.github.io/owlcms4/#/FeatureToggles).  
+- (49.0.1) Technical:  An improved implementation of the athlete and break timers is now enabled by default in this release.  In the very unlikely event you want the old behavior back use the `oldTimers` [Feature toggle](https://owlcms.github.io/owlcms4-prerelease/#/FeatureToggles).  
 - Announcer+Marshal
   - The previous athlete is now highlighted in blue in the grid.  The current and next athletes are also highlighted (yellow and orange, which is the same color convention as on the default scoreboards).  Blue is shown when the previous athlete is the current or the next.
   - A Notification is received when athletes withdraw from the snatch or the session.
