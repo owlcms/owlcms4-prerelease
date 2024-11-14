@@ -1,31 +1,22 @@
-> [!IMPORTANT]
+> [!WARNING]
 >
-> This is an IMPORTANT BUG FIX RELEASE.  It should be installed by anyone running any of the release numbers starting with 53.0
->
-> - You should test all releases, with actual data, *several days* before a competition.
-> - It is always wise to export your current database before updating.
+> - This is a **beta release**, used for testing and translation. ***Some features could be non-functional***.
+> - Beta releases are **not** normally used in actual competitions, except when a new feature is required. Use extreme care in testing if you intend to do so.
 
 - Maintenance log:
-  - 53.1.0: Database failures could occur when switching from Snatch to CJ or when switching sessions.  This was more likely to happen when athletes were in multiple categories.
-  - 53.1.0: When producing the competition results by eligibility category, if the championship is selected, then each category will be ordered according to the scoring system of the championship. This is useful when there are Sinclair/QYouth categories for example.
-  - 53.1.0: When producing the competition results by eligibility category and without a championship filter, the athletes would appear as many times as they had eligible categories instead of once.
-- Selectable scoring systems for [Best Lifter](https://jflamy.github.io/owlcms4/#/ResultDocuments?id=competition-results) in a championship and [Score-based Medals](https://jflamy.github.io/owlcms4/#/ScoreBasedCompetitions) (see the links for documentation),
-  - On the competition results page, it is possible to select a scoring system that will be shown in the grid.  This allows computing the best athlete for a championship using a different scoring system (for example, using Q-youth age-adjusted totals for a Youth Championship)
-  - The standard templates have been updated to use the Best Athlete scoring system selected if one is picked (the default is the competition global best athlete scoring system)
-  - The names have been aligned with what Dr. Huebner uses in her online calculators (Q-Youth, previously HP points or Age Factors, and Q-Masters, previously Q-age).
-- Jury Sheets for examinations:
-  - There are now two jury sheets in the default configuration.  One without the examination results, one with.  To print the examination version, use the `Print Entire Workbook` option (the examination results are in the second tab)
-- Children Categories Bar Rules
-  - The feature flag `lightBarU13` can be used to use a 15kg bar for boys in the U11 and U13 categories.  If an athlete needs the 20kg bar, the "Non-Standard bar" feature can be used to override. This is the same as removing the 20kg bar for younger boys age groups. 
-- Support for Q-masters results
-  - Q-masters is like SM(H)F but based on Q-points instead of Sinclair.  It is Q-points * the same age factor as SM(H)F
-  - The default templates for Masters protocols, result sheets and competition books now show the Q-masters value in addition to the SM(H)F.
-- Import of External Session Results: the following is now possible
-  - If a session needs to be run outside or in another building a) perform weigh-in normally and enter data normally in the main database. b) Export the main database and load it into the owlcms running in the other building c) Run the session, export the remote database c) Use the new feature at the bottom of the Results page to selectively read back the lifts from the remote session.
-  - Only the lift information is read back.  Note that owlcms follows the rules and will determine winners according to the lifting order that would have been followed had all sessions taken place normally.
-- jxls3 Templates
-  - In the top cell, where `jx:area` is given, it is now possible to add a directive of the form `owlcms:fixMerges(4, [1, 2, 3])`  This would merge cells vertically in columns 1, 2, 3, starting with row 4.  The cells are merged from the non-empty value down to the next non-empty cell.  This is a workaround for a limitation/bug in jxls3.  See the `templates/schedule/DaySchedule.xlsx` file for an example.
-- Locale: fixed a race condition where pages would load before it was determined that the application should switch to English because there is no translation for the local language.
-- Event Publishing: fixed issue with liftType published during event forwarding to public results and video information feeds.
+  - 54.0.0-beta01: The medals scoreboard now correctly reacts to group switches. Also reacts correctly to medal category switches during medal ceremonies and end of medal ceremonies.
+  - 54.0.0-beta01: The public scoreboard was not switching to medals during ceremonies, now fixed.
+  - 54.0.0-alpha03: the rank recalculation on the competition results page was not recomputing all categories, now fixed.
+  - 54.0.0-alpha02: reworked the category ranking code for performance when athletes are registered in many eligibility categories.
+  - 54.0.0-alpha01: initial release of scoreboard cleanup
+- Scoreboards now correctly display ranks and leaders for categories where medals are given based on a score (see documentation for [score-based medals](https://jflamy.github.io/owlcms4/#/ScoreBasedCompetitions))
+- Results
+  - During a competition with both score-based and total-based rankings, from the Competition Results page, using the Eligibility Categories report with the Score template will produce correct interim or final results.   Each category will be ranked according to it's scoring system.
+- Templates:
+  - the athlete's score and ranks in the current category are now obtained by using `${l.categoryScore}` `${l.categoryScoreRank}` (where l is the loop variable giving the current athlete).  
+  - If the current category is not score-based, this is the same as `${l.total}`and the `${l.totalRank}`, so it is always possible to use the `Score` templates for a total-based competition.
+- Bar Loading:
+  - The weight under which collars are not used is now configurable.  Default is 40kg.
+  - The normal grey bar color is used when 15kg bar is used for women or 20kg is used for men, even if the non-standard bar or children loading rules are in effect.
 
-For other recent changes, see [version 51 release notes](https://github.com/owlcms/owlcms4/releases/tag/50.0.0) and [version 52 release notes](https://github.com/owlcms/owlcms4/releases/tag/52.0.6)
+For other recent changes, see [version 52 release notes](https://github.com/owlcms/owlcms4/releases/tag/52.0.6) and [version 53 release notes](https://github.com/owlcms/owlcms4/releases/tag/53.1.0)
