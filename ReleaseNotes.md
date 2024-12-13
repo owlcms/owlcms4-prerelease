@@ -1,8 +1,11 @@
 > [!WARNING]
 >
-> - You should test all releases, with actual data, *several days* before a competition.
+> - This is a **beta release**, used for testing and translation. ***Some features could be non-functional***.
+> - Beta releases are **not** normally used in actual competitions, except when a new feature is required. Use extreme care in testing if you intend to do so.
 
 - Maintenance log:
+  - 54.2.0: Experimental feature to stop or restart the system from the web interface.  Currently shown on the home page if the feature switch `manageOwlcms` is present.
+  - 54.1.1: Ages are now always calculated relative to the competition date.
   - 54.1.0: Removed the "sinclair meet" option, see Score-based Competitions below
   - 54.1.0: The program was giving a spurious warning when a late change was made between the time the next weight was displayed and the time the clock  started running.
   
@@ -14,7 +17,7 @@
   
     - Unselect the traditional categories and reallocate athletes.
   
-    - You can create separate SM and SF for ages 0-34 and MM and MF for ages 35-999 where MM and MF would have SMHF or Q-masters as scoring system.  Or additional YM and YF with Q-youth etc.
+    - You can also create separate SM and SF for ages 0-34 and MM and MF for ages 35-999.  MM and MF would have SMHF or Q-masters as scoring system.  Same idea if you want youth categories to be score-based,  create additional YM and YF with Q-youth etc.
   
 - Speaker
   - The updates to the lifting order grid are now synchronized with the notifications.  Previously the progression of an athlete could be visible for a moment, leading the speaker to believe the requested weight was going up to that amount.
