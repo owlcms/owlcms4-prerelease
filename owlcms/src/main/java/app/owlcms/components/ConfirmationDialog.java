@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -41,8 +41,8 @@ public class ConfirmationDialog extends Dialog {
 		Button confirmButton = new Button(Translator.translate("Confirm"), event -> {
 			if (pAction != null) {
 				pAction.run();
-			} else if (action != null) {
-				action.run();
+			} else if (this.action != null) {
+				this.action.run();
 			}
 			if (confirmation != null) {
 				Notification.show(confirmation);
@@ -65,7 +65,7 @@ public class ConfirmationDialog extends Dialog {
 	}
 
 	public Runnable getAction() {
-		return action;
+		return this.action;
 	}
 
 	public void setAction(Runnable action) {

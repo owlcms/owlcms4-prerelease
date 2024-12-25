@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -24,8 +24,7 @@ public enum FOPState {
 	CURRENT_ATHLETE_DISPLAYED,
 
 	/**
-	 * time is running. Either automatically started on announce (if using the default "start on announce", or manually
-	 * by timekeeper (in traditional mode)
+	 * time is running. Either automatically started on announce (if using the default "start on announce", or manually by timekeeper (in traditional mode)
 	 */
 	TIME_RUNNING,
 

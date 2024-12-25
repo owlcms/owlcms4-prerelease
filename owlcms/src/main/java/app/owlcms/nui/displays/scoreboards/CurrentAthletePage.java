@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.nui.displays.scoreboards;
 
 import java.util.HashMap;
@@ -50,8 +56,8 @@ public class CurrentAthletePage extends AbstractResultsDisplayPage {
 
 	@Override
 	protected void init() {
-		logger = (Logger) LoggerFactory.getLogger(CurrentAthletePage.class);
-		uiEventLogger = (Logger) LoggerFactory.getLogger("UI" + this.logger.getName());
+		this.logger = (Logger) LoggerFactory.getLogger(CurrentAthletePage.class);
+		this.uiEventLogger = (Logger) LoggerFactory.getLogger("UI" + this.logger.getName());
 		var board = new CurrentAthlete(this);
 		this.setBoard(board);
 
@@ -77,7 +83,7 @@ public class CurrentAthletePage extends AbstractResultsDisplayPage {
 		fullMap.putAll(additionalMap);
 		setDefaultParameters(QueryParameters.simple(fullMap));
 	}
-	
+
 	@Override
 	protected void onAttach(AttachEvent attachEvent) {
 		DisplayParameters board = (DisplayParameters) this.getBoard();

@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.apputils.queryparameters;
 
 import java.util.List;
@@ -19,7 +25,6 @@ import ch.qos.logback.classic.Logger;
 public class BaseContent extends VerticalLayout implements FOPParametersReader, SoundParameters {
 
 	final static Logger logger = (Logger) LoggerFactory.getLogger(BaseContent.class);
-	
 	protected FieldOfPlay fop;
 	private Group group;
 	private Location location;
@@ -29,7 +34,7 @@ public class BaseContent extends VerticalLayout implements FOPParametersReader, 
 	private String routeParameter;
 	private boolean silenced;
 	private boolean downSilenced;
-	
+
 	public BaseContent() {
 		OwlcmsFactory.waitDBInitialized();
 	}

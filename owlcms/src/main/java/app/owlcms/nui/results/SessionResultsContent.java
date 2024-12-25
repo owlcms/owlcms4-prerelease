@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -464,7 +464,7 @@ public class SessionResultsContent extends AthleteGridContent implements HasDyna
 		groups.sort(Group.groupSelectionComparator.reversed());
 
 		OwlcmsSession.withFop(fop -> {
-			//logger.debug("top bar setting group to {} {}", this.getCurrentGroup(), LoggerUtils.whereFrom());
+			// logger.debug("top bar setting group to {} {}", this.getCurrentGroup(), LoggerUtils.whereFrom());
 			getGroupFilter().setValue(this.getCurrentGroup());
 			// switching to group "*" is understood to mean all groups
 			this.topBarMenu = new GroupSelectionMenu(groups, this.getCurrentGroup(),
@@ -483,13 +483,13 @@ public class SessionResultsContent extends AthleteGridContent implements HasDyna
 	 */
 	@Override
 	protected void defineFilters(GridCrud<Athlete> crud) {
-		//logger.debug("defineFilters {} -  {}\n{}", getGroup(), currentGroup,LoggerUtils.stackTrace());
+		// logger.debug("defineFilters {} - {}\n{}", getGroup(), currentGroup,LoggerUtils.stackTrace());
 
 		getGroupFilter().setPlaceholder(Translator.translate("Group"));
 		List<Group> groups = GroupRepository.findAll();
 		groups.sort(new NaturalOrderComparator<>());
 		getGroupFilter().setItems(groups);
-		getGroupFilter().setValue(currentGroup);
+		getGroupFilter().setValue(this.currentGroup);
 		createTopBarGroupSelect();
 		getGroupFilter().setItemLabelGenerator(Group::getName);
 		// hide because the top bar has it
@@ -661,6 +661,10 @@ public class SessionResultsContent extends AthleteGridContent implements HasDyna
 		return crud.getCrudLayout();
 	}
 
+	private Group getCurrentGroup() {
+		return this.currentGroup;
+	}
+
 	private ComboBox<Ranking> getRankingSelector() {
 		return this.rankingSelector;
 	}
@@ -681,17 +685,13 @@ public class SessionResultsContent extends AthleteGridContent implements HasDyna
 		init();
 	}
 
+	private void setCurrentGroup(Group currentGroup) {
+		// logger.debug("setCurrentGroup {} {}",currentGroup, LoggerUtils.whereFrom());
+		this.currentGroup = currentGroup;
+	}
+
 	private void setScoringSystem(Ranking value) {
 		this.scoringSystem = value;
-	}
-
-	private Group getCurrentGroup() {
-		return currentGroup;
-	}
-
-	private void setCurrentGroup(Group currentGroup) {
-		//logger.debug("setCurrentGroup {} {}",currentGroup, LoggerUtils.whereFrom());
-		this.currentGroup = currentGroup;
 	}
 
 }

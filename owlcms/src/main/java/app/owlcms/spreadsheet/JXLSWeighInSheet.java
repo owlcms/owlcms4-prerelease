@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -40,16 +40,16 @@ public class JXLSWeighInSheet extends JXLSWorkbookStreamSource {
 	@Override
 	public List<Athlete> getSortedAthletes() {
 		final Group currentGroup = getGroup();
-			List<Athlete> collect = AthleteSorter
-			        .registrationOrderCopy(AthleteRepository.findAllByGroupAndWeighIn(currentGroup, null)).stream()
-			        .map(a -> {
-				        if (a.getTeam() == null) {
-					        a.setTeam("");
-				        }
-				        return a;
-			        }).collect(Collectors.toList());
-			// logger.debug("sorted by category {}", collect);
-			return collect;
+		List<Athlete> collect = AthleteSorter
+		        .registrationOrderCopy(AthleteRepository.findAllByGroupAndWeighIn(currentGroup, null)).stream()
+		        .map(a -> {
+			        if (a.getTeam() == null) {
+				        a.setTeam("");
+			        }
+			        return a;
+		        }).collect(Collectors.toList());
+		// logger.debug("sorted by category {}", collect);
+		return collect;
 	}
 
 }

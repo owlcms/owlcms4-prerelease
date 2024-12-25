@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.nui.preparation;
 
 import java.util.Set;
@@ -16,14 +22,20 @@ final class DocumentsGrid extends OwlcmsCrudGrid<Group> {
 		super(domainType, crudLayout, owlcmsCrudFormFactory, grid);
 	}
 
-	@Override
-	protected void updateButtons() {
+	public Set<Group> getSelectedItems() {
+		return this.grid.getSelectedItems();
 	}
 
-	public Set<Group> getSelectedItems() {
-		return grid.getSelectedItems();
+	@Override
+	protected void cancelCallback() {
+		this.getOwlcmsGridLayout().hideForm();
 	}
-	
+
+	@Override
+	protected void findAllButtonClicked() {
+		refreshGrid();
+	}
+
 	@Override
 	protected void initLayoutGrid() {
 		initToolbar();
@@ -42,12 +54,6 @@ final class DocumentsGrid extends OwlcmsCrudGrid<Group> {
 	}
 
 	@Override
-	protected void findAllButtonClicked() {
-		refreshGrid();
-	}
-
-	@Override
-	protected void cancelCallback() {
-		this.getOwlcmsGridLayout().hideForm();
+	protected void updateButtons() {
 	}
 }

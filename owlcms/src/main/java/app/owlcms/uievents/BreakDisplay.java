@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -27,7 +27,7 @@ public interface BreakDisplay {
 	}
 
 	public default String inferGroupName(CeremonyType ceremonyType) {
-		//logger.debug("inferGroupName {}\n{}",ceremonyType,LoggerUtils.stackTrace());
+		// logger.debug("inferGroupName {}\n{}",ceremonyType,LoggerUtils.stackTrace());
 		FieldOfPlay fop = OwlcmsSession.getFop();
 		if (fop == null || ceremonyType == CeremonyType.MEDALS) {
 			return "";

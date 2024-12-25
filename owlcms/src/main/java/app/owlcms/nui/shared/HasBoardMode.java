@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.nui.shared;
 
 import org.slf4j.LoggerFactory;
@@ -54,7 +60,7 @@ public interface HasBoardMode {
 		} else if (fopState == FOPState.INACTIVE) {
 			bm = BoardMode.WAIT;
 		}
-		//logger.debug("computeBoardMode {} {} {} = {} -- {}", fopState, breakType, ceremonyType, bm, LoggerUtils.stackTrace());
+		// logger.debug("computeBoardMode {} {} {} = {} -- {}", fopState, breakType, ceremonyType, bm, LoggerUtils.stackTrace());
 		return bm;
 	}
 

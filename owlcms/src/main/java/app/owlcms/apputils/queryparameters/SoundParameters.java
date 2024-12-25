@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.apputils.queryparameters;
 
 import org.slf4j.LoggerFactory;
@@ -24,8 +30,20 @@ public interface SoundParameters extends FOPParameters, SoundEntries {
 	public default void buildDialog(Component target) {
 	}
 
+	public default boolean isCenterNotifications() {
+		return false;
+	}
+
+	public default boolean isDeclarations() {
+		return Config.getCurrent().featureSwitch("showDeclarationsToAnnouncer");
+	}
+
 	public default boolean isDownSilenced() {
 		return true;
+	}
+
+	public default boolean isLiveLights() {
+		return !Config.getCurrent().featureSwitch("noLiveLights");
 	}
 
 	public default boolean isSilenced() {
@@ -36,32 +54,6 @@ public interface SoundParameters extends FOPParameters, SoundEntries {
 		return false;
 	}
 
-	public default void setDownSilenced(boolean silent) {
-	}
-
-	public void setSilenced(boolean silent);
-
-	public default void setSingleReferee(boolean b) {
-	}
-
-	public default boolean isLiveLights() {
-		return !Config.getCurrent().featureSwitch("noLiveLights");
-	}
-
-	public default void setLiveLights(boolean showLiveLights) {}
-
-	public default boolean isDeclarations() {
-		return Config.getCurrent().featureSwitch("showDeclarationsToAnnouncer");
-	}
-	
-	public default void setCenterNotifications(boolean showLiveLights) {}
-
-	public default boolean isCenterNotifications() {
-		return false;
-	}
-
-	public default void setDeclarations(boolean showDeclarations) {}
-
 	public default boolean isStartOrder() {
 		if (this instanceof MarshallContent) {
 			return true;
@@ -70,5 +62,23 @@ public interface SoundParameters extends FOPParameters, SoundEntries {
 		}
 	}
 
-	public default void setStartOrder(boolean useStartOrder) {}
+	public default void setCenterNotifications(boolean showLiveLights) {
+	}
+
+	public default void setDeclarations(boolean showDeclarations) {
+	}
+
+	public default void setDownSilenced(boolean silent) {
+	}
+
+	public default void setLiveLights(boolean showLiveLights) {
+	}
+
+	public void setSilenced(boolean silent);
+
+	public default void setSingleReferee(boolean b) {
+	}
+
+	public default void setStartOrder(boolean useStartOrder) {
+	}
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -11,8 +11,8 @@ import java.util.Comparator;
 import app.owlcms.data.athlete.Athlete;
 
 /**
- * This comparator is used to highlight the athletes that have lifted recently, and are likely to request changes to the
- * automatic progression. It simply sorts according to time stamp, if available. Else lot number is used.
+ * This comparator is used to highlight the athletes that have lifted recently, and are likely to request changes to the automatic progression. It simply sorts
+ * according to time stamp, if available. Else lot number is used.
  *
  * @author jflamy
  *

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -21,8 +21,8 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 
 /**
- * Encapsulate a spreadsheet as a StreamSource so that it can be used as a source of data when the user clicks on a
- * link. This class converts the output stream to an input stream that the vaadin framework can consume.
+ * Encapsulate a spreadsheet as a StreamSource so that it can be used as a source of data when the user clicks on a link. This class converts the output stream
+ * to an input stream that the vaadin framework can consume.
  */
 @SuppressWarnings("serial")
 public abstract class XLSXWorkbookStreamSource implements InputStreamFactory {

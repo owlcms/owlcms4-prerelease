@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -18,8 +18,8 @@ import app.owlcms.nui.shared.SafeEventBusRegistration;
 /**
  * Button that triggers an initSounds document event that causes components to initialize their sounds.
  *
- * iOS in particular is stringent about requiring that sounds be played in response to a user interaction. Once a sound
- * has been played once, it can be played again without user intervention
+ * iOS in particular is stringent about requiring that sounds be played in response to a user interaction. Once a sound has been played once, it can be played
+ * again without user intervention
  *
  * @author jflamy
  *

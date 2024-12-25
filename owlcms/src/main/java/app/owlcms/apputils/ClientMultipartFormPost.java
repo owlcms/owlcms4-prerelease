@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * original code from
  * https://stackoverflow.com/questions/2469451/upload-files-from-java-client-to-a-http-server

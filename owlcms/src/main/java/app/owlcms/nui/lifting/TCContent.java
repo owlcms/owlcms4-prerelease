@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -123,12 +123,17 @@ public class TCContent extends AthleteGridContent implements HasDynamicTitle {
 		this.crudFormFactory = crudFormFactory;
 	}
 
-	@Override
 	@Subscribe
-	public void slaveUpdateGrid(UIEvent.LiftingOrderUpdated e) {
-		OwlcmsSession.withFop((fop) -> UIEventProcessor.uiAccess(this.plates, this.uiEventBus, () -> {
-			this.plates.computeImageArea(fop, true);
-		}));
+	public void slaveBarbellChanged(UIEvent.BarbellOrPlatesChanged e) {
+		FieldOfPlay fop2 = OwlcmsSession.getFop();
+		if (e.getOrigin() == this) {
+			return;
+		}
+		if (fop2 != null) {
+			this.platform = fop2.getPlatform();
+			// logger.debug("slaveBarbellChanged");
+			this.plates.computeImageArea(fop2, true);
+		}
 	}
 
 	@Override
@@ -139,17 +144,12 @@ public class TCContent extends AthleteGridContent implements HasDynamicTitle {
 		}));
 	}
 
+	@Override
 	@Subscribe
-	public void slaveBarbellChanged(UIEvent.BarbellOrPlatesChanged e) {
-		FieldOfPlay fop2 = OwlcmsSession.getFop();
-		if (e.getOrigin() == this) {
-			return;
-		}
-		if (fop2 != null) {
-			this.platform = fop2.getPlatform();
-			// logger.debug("slaveBarbellChanged");
-			plates.computeImageArea(fop2, true);
-		}
+	public void slaveUpdateGrid(UIEvent.LiftingOrderUpdated e) {
+		OwlcmsSession.withFop((fop) -> UIEventProcessor.uiAccess(this.plates, this.uiEventBus, () -> {
+			this.plates.computeImageArea(fop, true);
+		}));
 	}
 
 	@Override

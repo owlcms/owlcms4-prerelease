@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -46,8 +46,7 @@ import ch.qos.logback.classic.Logger;
 /**
  * Read records from an Excel file.
  *
- * Records for snatch, clean&jerk and total are read. All available tabs are scanned. Reading stops at first empty line.
- * Header line is skipped.
+ * Records for snatch, clean&jerk and total are read. All available tabs are scanned. Reading stops at first empty line. Header line is skipped.
  *
  * @author Jean-François Lamy
  *
@@ -57,7 +56,6 @@ public class RecordDefinitionReader {
 	private final static Logger logger = (Logger) LoggerFactory.getLogger(RecordDefinitionReader.class);
 	private final static Logger startupLogger = Main.getStartupLogger();
 
-	
 	public static List<String> createRecords(Workbook workbook, String name, String baseName) {
 		cleanUp(baseName);
 		DateTimeFormatter ymdFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -306,7 +304,7 @@ public class RecordDefinitionReader {
 								}
 								case 16: { // Q
 									if (cell.getCellType() == CellType.NUMERIC) {
-										//String cellValue = NumberToTextConverter.toText(cell.getNumericCellValue());
+										// String cellValue = NumberToTextConverter.toText(cell.getNumericCellValue());
 										rec.setEvent("");
 										break;
 									}

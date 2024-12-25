@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-Fran�ois Lamy
+ * Copyright © 2009-present Jean-Fran�ois Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -348,7 +348,6 @@ public class CurrentAthlete extends Results {
 			// change bottom line as soon as possible
 			updateDisplay(computeLiftType(a), fop);
 
-
 		}
 		// logger.debug("leave top alone {} {}", leaveTopAlone, fop.getState());
 		if (leaveTopAlone && fop.getState() == FOPState.CURRENT_ATHLETE_DISPLAYED) {
@@ -534,6 +533,11 @@ public class CurrentAthlete extends Results {
 	}
 
 	@Override
+	protected void setWideTeamNames(boolean wide) {
+		this.getElement().setProperty("teamWidthClass", (wide ? "wideTeams" : "narrowTeams"));
+	}
+
+	@Override
 	protected void updateDisplay(String liftType, FieldOfPlay fop) {
 		// logger.debug("updateBottom {}",LoggerUtils.stackTrace());
 		if (liftType != null) {
@@ -614,11 +618,6 @@ public class CurrentAthlete extends Results {
 
 	private void setDone(boolean b) {
 		this.groupDone = b;
-	}
-
-	@Override
-	protected void setWideTeamNames(boolean wide) {
-		this.getElement().setProperty("teamWidthClass", (wide ? "wideTeams" : "narrowTeams"));
 	}
 
 	private void syncWithFOP(UIEvent.SwitchGroup e) {

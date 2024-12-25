@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.nui.displays.attemptboards;
 
 import java.util.Map;
@@ -60,7 +66,7 @@ public class PublicFacingAttemptBoardPage extends AbstractAttemptBoardPage {
 		fullMap.putAll(initialMap);
 		fullMap.putAll(additionalMap);
 		setDefaultParameters(QueryParameters.simple(fullMap));
-		
+
 		AbstractAttemptBoard board = (AbstractAttemptBoard) getBoard();
 		board.setPublicFacing(true);
 		this.addComponent(board);

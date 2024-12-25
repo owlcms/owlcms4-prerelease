@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -143,7 +143,7 @@ public class CategoryGridField extends CustomField<List<Category>> {
 			        .withStatusLabel(this.validationStatus).bind("qualifyingTotal");
 			catBinder.setBean(pc);
 			hl.add(qualTotField);
-			
+
 			Button delete = new Button(Translator.translate("Delete"));
 			delete.addClassName("delete");
 			delete.addClickListener(e -> {
@@ -157,7 +157,7 @@ public class CategoryGridField extends CustomField<List<Category>> {
 				updateValue();
 			});
 			delete.getStyle().set("margin-left", "2em");
-			
+
 			if (pc.getMaximumWeight() <= 998) {
 				hl.add(delete);
 			}

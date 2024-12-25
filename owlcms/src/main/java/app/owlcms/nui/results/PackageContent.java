@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -486,8 +486,8 @@ public class PackageContent extends AthleteGridContent implements HasDynamicTitl
 
 	@Override
 	protected void defineFilters(GridCrud<Athlete> crud) {
-		//logger.debug("defineFilters");
-		
+		// logger.debug("defineFilters");
+
 		defineFilterCascade(crud);
 		this.includeUnfinishedCategories = new Checkbox(Translator.translate("Video.includeNotCompleted"));
 		getCrudLayout(crud).addFilterComponent(this.includeUnfinishedCategories);

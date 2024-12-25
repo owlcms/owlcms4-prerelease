@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.apputils.queryparameters;
 
 import java.net.URLDecoder;
@@ -141,11 +147,9 @@ public interface DisplayParametersReader extends SoundParametersReader, DisplayP
 	/*
 	 * Process query parameters
 	 *
-	 * Note: what Vaadin calls a parameter is in the REST style, actually part of the URL path. We use the old-style
-	 * Query parameters for our purposes.
+	 * Note: what Vaadin calls a parameter is in the REST style, actually part of the URL path. We use the old-style Query parameters for our purposes.
 	 *
-	 * @see app.owlcms.apputils.queryparameters.FOPParameters#setParameter(com.vaadin. flow.router.BeforeEvent,
-	 * java.lang.String)
+	 * @see app.owlcms.apputils.queryparameters.FOPParameters#setParameter(com.vaadin. flow.router.BeforeEvent, java.lang.String)
 	 */
 	@Override
 	public default void setParameter(BeforeEvent event, @OptionalParameter String routeParameter) {

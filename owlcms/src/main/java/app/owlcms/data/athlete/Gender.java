@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -48,7 +48,7 @@ public enum Gender {
 				throw new IllegalStateException();
 		}
 	}
-	
+
 	public String getTranslatedGenderCode() {
 		switch (this) {
 			case F:
@@ -59,7 +59,7 @@ public enum Gender {
 				throw new IllegalStateException();
 		}
 	}
-	
+
 	public void setTranslatedGenderCode(String ignored) {
 		// do nothing, for bean introspection
 	}

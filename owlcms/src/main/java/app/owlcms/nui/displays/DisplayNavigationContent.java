@@ -1,5 +1,5 @@
 /*******************************************************************************
-L * Copyright (c) 2009-2023 Jean-François Lamy
+L * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -108,13 +108,13 @@ public class DisplayNavigationContent extends BaseNavigationContent
 			        Translator.translate("Scoreboard.LiftingOrder"));
 			VerticalLayout intro1 = new VerticalLayout();
 			addP(intro1, Translator.translate("WarmupScoreboards.explanation"));
-			Button juryScoreboard = openInNewTab(JuryScoreboardPage.class,Translator.translate("Jury"));
+			Button juryScoreboard = openInNewTab(JuryScoreboardPage.class, Translator.translate("Jury"));
 			scoreboardWLeaders.getElement().setAttribute("title", Translator.translate("ScoreboardWLeadersMouseOver"));
 			FlexibleGridLayout grid1 = HomeNavigationContent.navigationGrid(
 			        scoreboard,
 			        scoreboardWLeaders,
 			        liftingOrder,
-			        scoreboardMultiRanks, 
+			        scoreboardMultiRanks,
 			        juryScoreboard);
 			doGroup(Translator.translate("WarmupScoreboards"), intro1, grid1, this);
 
@@ -159,7 +159,7 @@ public class DisplayNavigationContent extends BaseNavigationContent
 
 			DebugUtils.gc();
 		} catch (Throwable x) {
-			LoggerUtils.logError(logger,x);
+			LoggerUtils.logError(logger, x);
 		}
 	}
 

@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.nui.displays.scoreboards;
 
 import org.slf4j.LoggerFactory;
@@ -17,8 +23,7 @@ import app.owlcms.nui.shared.SafeEventBusRegistration;
 import ch.qos.logback.classic.Logger;
 
 /**
- * Wrapper class to wrap a board as navigable page, to store the board display options, and to present an option editing
- * dialog.
+ * Wrapper class to wrap a board as navigable page, to store the board display options, and to present an option editing dialog.
  *
  * @author jflamy
  *

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -99,7 +99,7 @@ public class JuryContent extends AthleteGridContent implements HasDynamicTitle {
 		// all this does is call init() -- which we override.
 		// when navigating to the page, Vaadin will call setParameter+readParameters
 		// these parameters will be applied
-		
+
 		setDefaultParameters(QueryParameters.simple(Map.of(
 		        SoundParameters.SILENT, "true",
 		        SoundParameters.DOWNSILENT, "true",

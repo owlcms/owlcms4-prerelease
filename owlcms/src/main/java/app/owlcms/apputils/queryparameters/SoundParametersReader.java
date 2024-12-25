@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.apputils.queryparameters;
 
 import java.util.List;
@@ -104,27 +110,13 @@ public interface SoundParametersReader extends SoundParameters, FOPParametersRea
 	@Override
 	public void setShowInitialDialog(boolean b);
 
-	public default void switchDownMode(boolean silent, boolean updateURL) {
-		setDownSilenced(silent);
+	public default void switchCenteringMode(Component component, boolean centerNotification, boolean updateURL) {
+		setCenterNotifications(centerNotification);
 		if (updateURL) {
-			updateURLLocation(getLocationUI(), getLocation(), DOWNSILENT, silent ? "true" : "false");
+			updateURLLocation(getLocationUI(), getLocation(), CENTER_NOTIFICATIONS, centerNotification ? "true" : "false");
 		}
 	}
-	
-	public default void switchLiveLightsMode(Component component, boolean liveLights, boolean updateURL) {
-		setLiveLights(liveLights);
-		if (updateURL) {
-			updateURLLocation(getLocationUI(), getLocation(), LIVE_LIGHTS, liveLights ? "true" : "false");
-		}
-	}
-	
-	public default void switchStartOrderMode(Component component, boolean startOrder, boolean updateURL) {
-		setStartOrder(startOrder);
-		if (updateURL) {
-			updateURLLocation(getLocationUI(), getLocation(), START_ORDER, startOrder ? "true" : "false");
-		}
-	}
-	
+
 	public default void switchDeclarationsMode(Component component, boolean showDeclarations, boolean updateURL) {
 		setDeclarations(showDeclarations);
 		if (updateURL) {
@@ -132,10 +124,10 @@ public interface SoundParametersReader extends SoundParameters, FOPParametersRea
 		}
 	}
 
-	public default void switchCenteringMode(Component component, boolean centerNotification, boolean updateURL) {
-		setCenterNotifications(centerNotification);
+	public default void switchDownMode(boolean silent, boolean updateURL) {
+		setDownSilenced(silent);
 		if (updateURL) {
-			updateURLLocation(getLocationUI(), getLocation(), CENTER_NOTIFICATIONS, centerNotification ? "true" : "false");
+			updateURLLocation(getLocationUI(), getLocation(), DOWNSILENT, silent ? "true" : "false");
 		}
 	}
 
@@ -151,6 +143,13 @@ public interface SoundParametersReader extends SoundParameters, FOPParametersRea
 		fop.setAnnouncerDecisionImmediate(b);
 		if (updateURL) {
 			updateURLLocation(getLocationUI(), getLocation(), IMMEDIATE, b ? null : "false");
+		}
+	}
+
+	public default void switchLiveLightsMode(Component component, boolean liveLights, boolean updateURL) {
+		setLiveLights(liveLights);
+		if (updateURL) {
+			updateURLLocation(getLocationUI(), getLocation(), LIVE_LIGHTS, liveLights ? "true" : "false");
 		}
 	}
 
@@ -174,5 +173,12 @@ public interface SoundParametersReader extends SoundParameters, FOPParametersRea
 	@Deprecated
 	public default void switchSoundMode(Component target, boolean silent, boolean updateURL) {
 		switchSoundMode(silent, updateURL);
+	}
+
+	public default void switchStartOrderMode(Component component, boolean startOrder, boolean updateURL) {
+		setStartOrder(startOrder);
+		if (updateURL) {
+			updateURLLocation(getLocationUI(), getLocation(), START_ORDER, startOrder ? "true" : "false");
+		}
 	}
 }

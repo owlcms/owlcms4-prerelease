@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.nui.preparation;
 
 import java.io.IOException;
@@ -187,7 +193,7 @@ public class RecordConfigEditingFormFactory extends OwlcmsCrudFormFactory<Record
 		Div allRecords = new Div();
 		allRecords.add(dd.createImmediateDownloadButton());
 		allRecords.setWidthFull();
-		
+
 		var recordsWriter1 = new JXLSExportRecords(UI.getCurrent(), true, true);
 		JXLSDownloader dd1 = new JXLSDownloader(
 		        () -> {

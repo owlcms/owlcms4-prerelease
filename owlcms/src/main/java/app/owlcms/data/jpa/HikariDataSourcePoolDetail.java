@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.data.jpa;
 
 import java.lang.reflect.Field;
@@ -11,35 +17,35 @@ import app.owlcms.utils.LoggerUtils;
 import ch.qos.logback.classic.Logger;
 
 public class HikariDataSourcePoolDetail {
-    private final HikariDataSource dataSource;
-    private final static Logger logger = (Logger) LoggerFactory.getLogger(HikariDataSourcePoolDetail.class);
+	private final static Logger logger = (Logger) LoggerFactory.getLogger(HikariDataSourcePoolDetail.class);
+	private final HikariDataSource dataSource;
 
-    public HikariDataSourcePoolDetail(HikariDataSource dataSource) {
-        this.dataSource = dataSource;
-    }
+	public HikariDataSourcePoolDetail(HikariDataSource dataSource) {
+		this.dataSource = dataSource;
+	}
 
-    public HikariPool getHikariPool() {
-    	Field field;
+	public int getActive() {
 		try {
-			field = dataSource.getClass().getDeclaredField("pool");
+			return getHikariPool().getActiveConnections();
+		} catch (Exception ex) {
+			return -1;
+		}
+	}
+
+	public HikariPool getHikariPool() {
+		Field field;
+		try {
+			field = this.dataSource.getClass().getDeclaredField("pool");
 			field.setAccessible(true);
-	        HikariPool hikariPool = (HikariPool) field.get(dataSource);
+			HikariPool hikariPool = (HikariPool) field.get(this.dataSource);
 			return hikariPool;
 		} catch (Exception e) {
-			LoggerUtils.logError(logger,e);
+			LoggerUtils.logError(logger, e);
 		}
 		return null;
-    }
+	}
 
-    public int getActive() {
-        try {
-            return getHikariPool().getActiveConnections();
-        } catch (Exception ex) {
-            return -1;
-        }
-    }
-
-    public int getMax() {
-        return dataSource.getMaximumPoolSize();
-    }
+	public int getMax() {
+		return this.dataSource.getMaximumPoolSize();
+	}
 }

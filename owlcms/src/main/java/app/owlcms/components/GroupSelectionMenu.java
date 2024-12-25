@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.components;
 
 import java.util.List;
@@ -58,9 +64,9 @@ public class GroupSelectionMenu extends MenuBar {
 			MenuItem subItem = subMenu.addItem(
 			        describedName(g),
 			        e -> {
-			        	if (!e.isFromClient()) {
-			        		return;
-			        	}
+				        if (!e.isFromClient()) {
+					        return;
+				        }
 				        whenChecked.accept(g);
 				        if (currentlyChecked[0] != null) {
 					        currentlyChecked[0].setChecked(false);
@@ -93,9 +99,9 @@ public class GroupSelectionMenu extends MenuBar {
 		hl.setAlignItems(Alignment.CENTER);
 		MenuItem item3 = subMenu.addItem(hl,
 		        e -> {
-		        	if (!e.isFromClient()) {
-		        		return;
-		        	}
+			        if (!e.isFromClient()) {
+				        return;
+			        }
 			        if (currentlyChecked[0] != null) {
 				        currentlyChecked[0].setChecked(false);
 			        }
@@ -123,6 +129,5 @@ public class GroupSelectionMenu extends MenuBar {
 			return g.getName() + " - " + g.getDescription();
 		}
 	}
-
 
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
 import ch.qos.logback.classic.Logger;
 
 /**
- * Navigating to a component that implements this interface will trigger the setParameter method. The setParameter
- * method will invoke readParams method to actually process the query parameter.
+ * Navigating to a component that implements this interface will trigger the setParameter method. The setParameter method will invoke readParams method to
+ * actually process the query parameter.
  *
  * Display pages extend an abstract class that stores all the options.
  *

@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.nui.displays.scoreboards;
 
 import java.util.Map;
@@ -29,7 +35,6 @@ public class PublicNoLeadersPage extends PublicScoreboardPage {
 	public String getPageTitle() {
 		return Translator.translate("Scoreboard") + OwlcmsSession.getFopNameIfMultiple();
 	}
-
 
 	@Override
 	protected void setDefaultParameters() {

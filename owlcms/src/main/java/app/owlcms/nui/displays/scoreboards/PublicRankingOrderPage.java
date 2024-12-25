@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.nui.displays.scoreboards;
 
 import java.util.HashMap;
@@ -103,20 +109,6 @@ public class PublicRankingOrderPage extends AbstractResultsDisplayPage {
 		getMedalsBoard().getStyle().set("display", "none");
 		this.ui = UI.getCurrent();
 	}
-	
-	@Override
-	protected void onAttach(AttachEvent attachEvent) {
-		DisplayParameters board = (DisplayParameters) this.getBoard();
-		board.setFop(getFop());
-		getMedalsBoard().setFop(getFop());
-		
-		this.setResultsBoard((Results) board);
-		this.setMedalsBoard(getMedalsBoard());
-		
-		this.addComponent((Component) board);
-		getMedalsBoard().setVisible(false);
-		this.addComponent(getMedalsBoard());
-	}
 
 	@Override
 	protected void init() {
@@ -124,6 +116,20 @@ public class PublicRankingOrderPage extends AbstractResultsDisplayPage {
 		this.uiEventLogger = (Logger) LoggerFactory.getLogger("UI" + this.logger.getName());
 		createComponents();
 		setDefaultParameters();
+	}
+
+	@Override
+	protected void onAttach(AttachEvent attachEvent) {
+		DisplayParameters board = (DisplayParameters) this.getBoard();
+		board.setFop(getFop());
+		getMedalsBoard().setFop(getFop());
+
+		this.setResultsBoard((Results) board);
+		this.setMedalsBoard(getMedalsBoard());
+
+		this.addComponent((Component) board);
+		getMedalsBoard().setVisible(false);
+		this.addComponent(getMedalsBoard());
 	}
 
 	protected void setDefaultParameters() {
@@ -150,15 +156,15 @@ public class PublicRankingOrderPage extends AbstractResultsDisplayPage {
 		setDefaultParameters(QueryParameters.simple(fullMap));
 	}
 
-	private void setMedalsBoard(ResultsMedals medalsBoard) {
-		this.medalsBoard = medalsBoard;
-	}
-
 	protected void setResultsBoard(Results board) {
 		this.resultsBoard = board;
 	}
 
 	private final ResultsMedals getMedalsBoard() {
 		return this.medalsBoard;
+	}
+
+	private void setMedalsBoard(ResultsMedals medalsBoard) {
+		this.medalsBoard = medalsBoard;
 	}
 }

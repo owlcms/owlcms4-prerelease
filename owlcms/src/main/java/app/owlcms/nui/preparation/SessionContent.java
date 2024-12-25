@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009-2023 Jean-François Lamy
+ * Copyright © 2009-present Jean-François Lamy
  *
  * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
  * License text at https://opensource.org/licenses/NPOSL-3.0
@@ -278,7 +278,7 @@ public class SessionContent extends BaseContent implements CrudListener<Group>, 
 			};
 			Button editDetails = new Button(Translator.translate("Sessions.EditDetails"), clickListener);
 			editDetails.addThemeVariants(ButtonVariant.LUMO_SMALL);
-			
+
 			Button technical = openInNewTab(RegistrationContent.class, translation, p != null ? p.getName() : "?");
 			// prevent grid row selection from triggering
 			technical.getElement().addEventListener("click", ignore -> {

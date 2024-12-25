@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Copyright © 2009-present Jean-François Lamy
+ *
+ * Licensed under the Non-Profit Open Software License version 3.0  ("NPOSL-3.0")
+ * License text at https://opensource.org/licenses/NPOSL-3.0
+ *******************************************************************************/
 package app.owlcms.data.records;
 
 import java.util.ArrayList;
@@ -64,7 +70,7 @@ public class RecordFilter {
 			String order = getRowOrder(re.getRecordName(), re.getFileName());
 
 			rowOrder.put(order, re.getRecordName());
-			
+
 			// synthetic key to arrange records in correct box.
 			// expected order U13 < U15 < JR < U23 < SR < Open
 			// Open is after SR, because is 0-999 -- is less specific than 15-999
@@ -72,7 +78,7 @@ public class RecordFilter {
 			try {
 				String key2 = String.format("%d_%03d_%03d_%03d_%s",
 				        re.getGender().ordinal(),
-				        re.getAgeGrpUpper(), 999-re.getAgeGrpLower(), 
+				        re.getAgeGrpUpper(), 999 - re.getAgeGrpLower(),
 				        re.getBwCatUpper(),
 				        // re.getRecordFederation()
 				        recordNameIsCategory ? re.getRecordFederation() : "");
