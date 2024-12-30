@@ -1,6 +1,6 @@
 /* green transparent page background, no stretching */
 * {
-    --pageBackgroundColor: #00ff00;
+    --pageBackgroundColor: transparent;
     --pageTextColor: white;
 }
 

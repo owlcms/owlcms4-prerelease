@@ -2,7 +2,7 @@
     /*************************
      * Customization section
      *************************/
-    --pageBackgroundColor: #00ff00;
+    --pageBackgroundColor: transparent;
     --pageTextColor: white;
 
     /* variable-size columns. fr = free space after other columns have been allocated.

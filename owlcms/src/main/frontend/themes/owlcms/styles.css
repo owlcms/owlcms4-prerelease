@@ -22,3 +22,7 @@ vaadin-grid::part(isNextAthlete) {
     background-color: rgb(253, 199, 98);
     font-weight: bold;
 }
+
+html, body {
+    background-color: transparent !important;
+}
