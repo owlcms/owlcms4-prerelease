@@ -140,9 +140,9 @@ public class Config {
 	private Boolean useCompetitionDate;
 	@Column(columnDefinition = "boolean default true")
 	private Boolean mqttInternal = true;
-	@Column(columnDefinition = "varchar(255) default 'css/nogrid'")
+	@Column(columnDefinition = "varchar(255) default 'css/transparent'")
 	private String stylesDirectory;
-	@Column(name = "videoStylesDirectory", columnDefinition = "varchar(255) default 'css/nogrid'")
+	@Column(name = "videoStylesDirectory", columnDefinition = "varchar(255) default 'css/transparent'")
 	private String videoStylesDirectory;
 	@Transient
 	@JsonIgnore
@@ -673,7 +673,7 @@ public class Config {
 			// get from database
 			param = Config.getCurrent().getVideoStylesDirectory();
 			if (param == null || param.isBlank()) {
-				param = "css/nogrid";
+				param = "css/transparent";
 			}
 		}
 		Path ldpd = ResourceWalker.getLocalDirPath();
@@ -685,7 +685,7 @@ public class Config {
 			Path ldp = ldpd.resolve("css/" + param);
 			boolean predefinedStyleName = isPredefinedStyle(param);
 			if (!Files.exists(ldp) && !predefinedStyleName) {
-				param = "css/nogrid";
+				param = "css/transparent";
 				String message = "{} does not exist, using default css/nogrid as default video styles";
 				Main.getStartupLogger().error(message, ldp.toAbsolutePath());
 				logger./**/error(message, ldp.toAbsolutePath());

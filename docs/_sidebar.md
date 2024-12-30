@@ -10,6 +10,7 @@
   * [Edit Athlete Entries](2300EditAthleteEntries)
   * [Documents](2400PreCompetitionDocuments)
   * [Records Management](2500RecordsManagement)
+  * [Score-based Medals](ScoreBasedCompetitions)
 * Running a Competition
   * [Weigh-in and Start Numbers](3000WeighIn)
   * [Announcing](3100AnnouncingIntro)
@@ -23,12 +24,17 @@
 * Scoreboards and Results
   * [Scoreboards](Displays)
   * [Result Documents](ResultDocuments)
+* Video
+  * [OBS Setup](OBS)
+  * [Streaming on Facebook](Streaming)
+  * [Internet via a Phone](PhoneHotSpot)
+  * [Automatic Scene Switching](OBSSceneSwitching)
+  * [Replays](JuryReplays)
 * Advanced Topics
-  * [Score-based Medals](ScoreBasedCompetitions)
   * [Optional Modified Competition Rules](ModifiedRules)
   * [Competition Options Reference](2600AdvancedPreCompetitionSetup)
   * [System Settings Reference](2120AdvancedSystemSettings)
-  * [Customization](UploadingLocalSettings)
+  * [Packaging Local Settings](UploadingLocalSettings)
   * [Scoreboard Colors](Styles)
   * [Flags and Pictures](FlagsPictures)
   * [Excel Template Variables](TemplateVariables)
@@ -41,12 +47,6 @@
   * [MQTT Messaging Specification](MQTTMessages)
   * [Using PostgreSQL](PostgreSQL)
   * [Contributing to the code](Gitpod)
-* Video
-  * [Preparing the Video Setup](OBS)
-  * [Live Streaming Events](Streaming)
-  * [Internet via a Phone](PhoneHotSpot)
-  * [Automatic Scene Switching](OBSSceneSwitching)
-  * [Jury Replays](JuryReplays)
 * Virtual Competitions
   * [Overview](4100VirtualOverview)
   * [Preparing the Zoom Setup](4200PrepareZoomBroadcasting)

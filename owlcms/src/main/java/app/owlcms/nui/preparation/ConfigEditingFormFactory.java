@@ -468,7 +468,7 @@ public class ConfigEditingFormFactory
 
 		TextField videoStylesField = new TextField();
 		videoStylesField.setWidthFull();
-		layout.addFormItem(videoStylesField, Translator.translate("Config.videoStylesLabel"));
+		layout.addFormItem(videoStylesField, Translator.translate("Config.v55_videoStylesLabel"));
 		this.binder.forField(videoStylesField)
 		        .withNullRepresentation("")
 		        .bind(Config::getVideoStylesDirBase, Config::setVideoStylesDirectory);
