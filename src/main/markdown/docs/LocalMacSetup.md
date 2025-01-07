@@ -1,4 +1,4 @@
-## macOS, Linux or RaspberryOS Installation
+## macOS Installation
 
 > Pre-requisite:  You may need to install the Java language on your computer before installing owlcms. See [Installing Java](#installing-java) section at the bottom of this page to check.
 
