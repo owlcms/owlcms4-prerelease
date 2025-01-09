@@ -4,7 +4,7 @@
 > - **Alpha releases are not normally used in actual competitions.** 
 > - Export your current database before updating if it contains important data.
 
-- New [Raspberry Pi and Linux Installation Instructions](https://${env.REPO_OWNER}.github.io/${env.O_REPO_NAME}/#/LocalPiLinuxSetup) using owlcms-launcher for updating, launching and stopping OWLCMS on a local computer.
+- New [Windows Installation Instructions](https://${env.REPO_OWNER}.github.io/${env.O_REPO_NAME}/#/LocalWindowsSetup) and [Raspberry Pi and Linux Installation Instructions](https://${env.REPO_OWNER}.github.io/${env.O_REPO_NAME}/#/LocalPiLinuxSetup) using owlcms-launcher for updating, launching and stopping OWLCMS on a local computer.
 - Simplified Video Setup
   - The default style for Video Streaming is now `transparent` . When using `transparent` 
     - It is no longer necessary to crop the Current Athlete view
