@@ -4,7 +4,19 @@
 > - **Alpha releases are not normally used in actual competitions.** 
 > - Export your current database before updating if it contains important data.
 
-- New [Windows Installation Instructions](https://owlcms.github.io/owlcms4/#/LocalWindowsSetup) and [Raspberry Pi and Linux Installation Instructions](https://owlcms.github.io/owlcms4/#/LocalPiLinuxSetup) using owlcms-launcher for updating, launching and stopping OWLCMS on a local computer.
+| Introducing the Owlcms Control Panel                         |
+| ------------------------------------------------------------ |
+| Starting with release 55, the installation process changes for running owlcms on a local machine.<br />A small program is now installed (once) on your computer. It provides a Control Panel to install and update owlcms and to start and stop the program  The control panel works the same on Windows, macOS, RasperryPi OS and Linux.<br />See the [Installation Instructions](https://owlcms.github.io/owlcms4-prerelease/#/LocalDownloads.) and execution instructions using the [owlcms Control Panel](https://owlcms.github.io/owlcms4-prerelease/#/LocalControlPanel.md). |
+
+Version Log
+
+- 55.0.0-alpha04: Updated the Mac instructions for correct DMG drag description
+- 55.0.0-alpha04: Removed obsolete Procfile and system.properties files from packaging
+- 55.0.0-alpha03: Updated the Mac and Windows instructions to use the Control Panel
+
+**New In This Release**
+
+- New [Installation Instructions](https://owlcms.github.io/owlcms4-prerelease/#/LocalDownloads.) and startup instructions using the [owlcms Control Panel](https://owlcms.github.io/owlcms4-prerelease/#/LocalControlPanel.md) for updating, launching and stopping OWLCMS on a local computer.
 - Simplified Video Setup
   - The default style for Video Streaming is now `transparent` . When using `transparent` 
     - It is no longer necessary to crop the Current Athlete view
