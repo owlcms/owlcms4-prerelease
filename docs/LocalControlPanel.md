@@ -2,19 +2,17 @@ The most common option for using owlcms is to run it locally at the competition 
 
 ## Using the Control Panel
 
-The control panel works the same on all the platforms (Windows, Mac, Raspberry Pi, Linux).  At a competition, only one laptop runs the control panel and owlcms.  To install the control panel for your own type of computer, see the [Control Panel Installation page](LocalDownloads).
+The control panel works the same on all the platforms (Windows, Mac, Raspberry Pi, Linux).  At a competition, only one laptop runs the control panel and owlcms.  **To install the control panel for your computer, see the [Control Panel Installation page](LocalDownloads).**
 
 When you start the control panel for the first time, it downloads the current version of owlcms, and all the necessary files to run it.  Once the copying is done, you only need to click "Launch"
 
 ![40](nimg/1100windows/40.png)
 
-The Control Panel then starts the owlcms program. After 10-30 seconds depending on your computer, there should be a browser open showing the owlcms home page.  The address shown on that page r is important: it is the one the other computers, displays and devices need to use to talk to owlcms.
-
-The control panel shows a "Stop" button that you can use when the competition is over.  
+After launching, the control panel shows a "Stop" button that you can use when the competition is over.  
 
 > You should leave the control panel open (hide it behind the other windows or minimize it).  Closing the control panel when owlcms is running is the same as clicking the "Stop" button.
 
-![50](nimg/1100windows/50.png)
+After 10-30 seconds depending on your computer, a browser will show the owlcms home page.  The address shown on that page is important: it is the address used by the other computers on the network to reach owlcms.![50](nimg/1100windows/50.png)
 
 ## Updating owlcms
 
@@ -31,7 +29,7 @@ owlcms is updated frequently for new features and bug fixes.  If you don't have 
 
 In a typical local setup, the announcer's laptop is the main computer (but you can use any other computer on the network if you prefer). The control panel is installed on the main computer. It starts and stops the owlcms program.  All the other displays and devices talk to owlcms on the main laptop over the network (WIFI or Ethernet).  ![LocalOverview](EquipmentSetup/LocalOverview.svg)
 
-- owlcms runs on a single computer, no matter how many platforms. This is the main computer.
+- owlcms runs on a single computer, no matter how many platforms are in use. This is the main computer.  When there are multiple platforms, the main laptop is often dedicated to owlcms instead of being used by an announcer.
 - The control panel is installed on the main computer to start/stop owlcms.
 - All the other displays connect to the main computer using the HTTP address shown on the initial browser.
 - Phones or tablets also connect using HTTP using their web browser.
