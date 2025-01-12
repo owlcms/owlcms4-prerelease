@@ -4,6 +4,10 @@
 > - **Alpha releases are not normally used in actual competitions.** 
 > - Export your current database before updating if it contains important data.
 
+| Introducing the Owlcms Control Panel                         |
+| ------------------------------------------------------------ |
+| Starting with release 55, the installation process changes for running owlcms on a local machine.<br />A small program is now installed (once) on your computer. It provides a Control Panel to install and update owlcms and to start and stop the program  The control panel works the same on Windows, macOS, RasperryPi OS and Linux.<br />See the [Installation Instructions](https://${env.REPO_OWNER}.github.io/${env.O_REPO_NAME}/#/LocalDownloads.) and execution instructions using the [owlcms Control Panel](https://${env.REPO_OWNER}.github.io/${env.O_REPO_NAME}/#/LocalControlPanel.md). |
+
 Version Log
 
 - 55.0.0-alpha04: Updated the Mac instructions for correct DMG drag description
