@@ -13,12 +13,17 @@
   
 - Download the .dmg file to your computer
 
-- Open the .dmg file. Drag the owlcms icon over the Applications icon
+- Open the .dmg file. 
+  ![30](nimg/1120Mac/30.jpg)
+  There are two options for you (you can do both)
+
+  - Drag the owlcms icon to the Application icon.  This will copy the control panel app in your Application folder and you will find it there along with your other applications
+  - Drag the owlcms icon to your desktop directly.
+
 
 ### Running OWLCMS
 
-- **Right-click on the owlcms icon and use Open** to authorize the application to run.  This is only needed the first time around.
+- After dragging the app to its location, **Right-click** on it. A warning about running an unsigned application will come up. **Select Open** to authorize the application to run.  *This is only needed the first time around.*
 
 - Once this is done, you can follow the steps shown in the [Local Control Panel Overview](LocalControlPanel)
-
 

@@ -41,15 +41,5 @@
             <outputDirectory>local</outputDirectory>
             <filtered>true</filtered>
         </file>
-        <file>
-            <source>${project.basedir}/src/main/assembly/Procfile</source>
-            <outputDirectory></outputDirectory>
-            <filtered>true</filtered>
-        </file>
-        <file>
-            <source>${project.basedir}/src/main/assembly/system.properties</source>
-            <outputDirectory></outputDirectory>
-            <filtered>true</filtered>
-        </file>
     </files>
 </assembly>

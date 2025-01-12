@@ -12,11 +12,6 @@
             <source>${project.build.directory}/${project.artifactId}-${project.version}.jar</source>
             <outputDirectory></outputDirectory>
             <destName>${project.artifactId}.jar</destName>
-        </file>    
-		<file>
-			<source>${project.basedir}/src/main/assembly/Procfile</source>
-			<outputDirectory></outputDirectory>
-			<filtered>true</filtered>
-		</file>
+        </file>
 	</files>
 </assembly>

@@ -39,16 +39,6 @@
             <destName>${project.artifactId}.jar</destName>
         </file>
         <file>
-            <source>${project.basedir}/src/main/assembly/Procfile</source>
-            <outputDirectory></outputDirectory>
-            <filtered>true</filtered>
-        </file>
-        <file>
-            <source>${project.basedir}/src/main/assembly/system.properties</source>
-            <outputDirectory></outputDirectory>
-            <filtered>true</filtered>
-        </file>
-        <file>
             <source>${project.basedir}/src/main/resources/logback.xml</source>
             <destName>logback.xml</destName>
             <outputDirectory>local</outputDirectory>
