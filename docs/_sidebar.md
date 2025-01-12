@@ -4,7 +4,7 @@
 
 * Running Locally
   * [owlcms Control Panel](LocalControlPanel)
-  * [Downloads and Instructions](LocalDownloads)
+  * [Initial Installation](LocalDownloads)
   * [Equipment Setup](EquipmentSetup)
 * Running in the Cloud
   * [Overview](CloudOverview)
