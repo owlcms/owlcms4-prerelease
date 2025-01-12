@@ -4,7 +4,13 @@
 > - **Alpha releases are not normally used in actual competitions.** 
 > - Export your current database before updating if it contains important data.
 
-- New [Windows Installation Instructions](https://owlcms.github.io/owlcms4/#/LocalWindowsSetup) and [Raspberry Pi and Linux Installation Instructions](https://owlcms.github.io/owlcms4/#/LocalPiLinuxSetup) using owlcms-launcher for updating, launching and stopping OWLCMS on a local computer.
+Version Log
+
+55.0.0-alpha03: Updated the Mac and Windows instructions to use the Control Panel for 
+
+**New In This Release**
+
+- New [Installation Instructions](https://owlcms.github.io/owlcms4-prerelease/#/LocalDownloads.) and startup instructions using the [owlcms Control Panel](https://owlcms.github.io/owlcms4-prerelease/#/LocalControlPanel.md) for updating, launching and stopping OWLCMS on a local computer.
 - Simplified Video Setup
   - The default style for Video Streaming is now `transparent` . When using `transparent` 
     - It is no longer necessary to crop the Current Athlete view
