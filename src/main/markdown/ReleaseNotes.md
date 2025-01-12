@@ -10,6 +10,7 @@
 
 Version Log
 
+- 55.0.0-alpha05: Tweaks to the control panel installation instructions
 - 55.0.0-alpha04: Updated the Mac instructions for correct DMG drag description
 - 55.0.0-alpha04: Removed obsolete Procfile and system.properties files from packaging
 - 55.0.0-alpha03: Updated the Mac and Windows instructions to use the Control Panel

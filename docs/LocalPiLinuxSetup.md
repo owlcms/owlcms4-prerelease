@@ -2,13 +2,13 @@
 
 ### Installation
 
-- Go to the page https://github.com/jflamy/owlcms-launcher/releases.
+- Click on this link: [Release Repository](https://github.com/owlcms/owlcms-controlpanel/releases).  **Scroll down to the Assets section**. 
   
-- **Scroll down and download the installation package by clicking on the file that ends with`pi.deb`.** 
-  If you are installing on Intel Linux, use amd64.deb instead
-
+- Download the installation package by clicking on the file that ends with **`pi.deb`.** 
+  If you are installing on Intel Linux, use **`amd64.deb`** instead
+  
   ![pi_20](nimg/1110pi/pi_20.png)
-
+  
 - **Open the Downloads folder** 
   
   Move your mouse to the right of the download notification.  You should see a small folder icon appear.

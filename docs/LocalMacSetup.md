@@ -2,7 +2,9 @@
 
 ### Installation
 
-- Go to the page https://github.com/jflamy/owlcms-launcher/releases.  **Scroll down to the Assets section**.
+- Click on this link: [Release Repository](https://github.com/owlcms/owlcms-controlpanel/releases).  **Scroll down to the Assets section**.
+  
+- Download the file appropriate for your type of computer
   
   - If you have a **newer M1/M2/M3/M4 mac**, get the installation package that ends with **`_arm64.dmg`**.
   
@@ -14,9 +16,11 @@
 - Download the .dmg file to your computer
 
 - Open the .dmg file. 
-  ![30](nimg/1120Mac/30.jpg)
-  There are two options for you (you can do both)
 
+  ![30](nimg/1120Mac/30.jpg)
+
+- There are two options for you (you can do both)
+  
   - Drag the owlcms icon to the Application icon.  This will copy the control panel app in your Application folder and you will find it there along with your other applications
   - Drag the owlcms icon to your desktop directly.
 
