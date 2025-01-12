@@ -1,9 +1,14 @@
-[Home](index)
+- [Home](index#owlcms-olympic-weightlifting-competition-management-system)
+- [Gallery](index#Gallery)
+- [Features](index#Features)
 
-* Installation
-  * [Downloads and Instructions](Downloads)
-  * [Installation Options](InstallationOverview)
+* Running Locally
+  * [owlcms Control Panel](LocalControlPanel)
+  * [Downloads and Instructions](LocalDownloads)
   * [Equipment Setup](EquipmentSetup)
+* Running in the Cloud
+  * [Overview](CloudOverview)
+  * [Installation Instructions](Fly)
 * Competition Setup
   * [Pre-Competition Setup](2100PreCompetitionSetup)
   * [Registration](2200Registration)
