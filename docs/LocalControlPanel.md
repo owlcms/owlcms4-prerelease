@@ -33,3 +33,21 @@ In a typical local setup, the announcer's laptop is the main computer (but you c
 - The control panel is installed on the main computer to start/stop owlcms.
 - All the other displays connect to the main computer using the HTTP address shown on the initial browser.
 - Phones or tablets also connect using HTTP using their web browser.
+
+## Menus
+
+The menu bar gives access to the following options
+
+- **File**
+  In order of likelihood of usage
+  - **Quit** This exits the program, same as using the X (Windows and Linux) or red button (Mac)
+  - **Open Installation Directory**: You would use this to go inside of the installed versions, for example to gather log files at the request of the application maintainers.
+  - **Remove All Versions**: this removes all the installed versions of owlcms, but leaves the configuration and Java.  If you use this option and then restart the control panel, you will get the latest version reinstalled.
+  - **Remove Java**: this removes the Java runtime engine that actually runs owlcms.  When restarting the control panel, the latest stable version of Java will be reinstalled
+  - **Remove All Stored Data and Configurations** Uninstalling the application does not uninstall the databases and the programs and Java.  This uninstalls all that the application copied.
+- **Processes**
+  - **Kill Already Running Process**  You may inadvertently start two control panels, and try to start two instances of owlcms.  The Control Panel will only allow one at a time.  If you can't find the other control panel to stop the previous one, this entry will try to kill it.
+- **Help**
+  - **Documentation** links to this web site.
+  - **About** shows the version number of the control panel if you need to report a bug.
+
