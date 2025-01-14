@@ -1067,4 +1067,14 @@ public class PAthlete extends Athlete implements IRankHolder {
 		// and we don't want to copy the code.
 		return super.toStringRanks();
 	}
+	
+	@Override
+	public String getFederationCodes() {
+		return this.a.getFederationCodes();
+	}
+	
+	@Override
+	public void setFederationCodes(String federationCodes) {
+		this.a.setFederationCodes(federationCodes);
+	}
 }
