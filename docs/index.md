@@ -31,17 +31,6 @@
 </table>
 
 
-### Downloads and Installation
-
-Most people run the program on a laptop at the competition site ([overview](InstallationOverview#stand-alone-laptop-installation))
-
-- [Windows Stand-alone Installation](LocalWindowsSetup)
-- [Linux, Raspberry or Mac Stand-alone Installation](LocalLinuxMacSetup)
-
-You can also run the program in the cloud, in which case you don't have to install anything and can run your consoles and displays directly from the Internet.
-
-- [Cloud-based installation](InstallationOverview#cloud-based-installation)
-
 ### Features
 
 The following list is a sampling of the many features available.  <u>*Click on the images if you wish to view them full-sized*</u>.
@@ -164,9 +153,3 @@ The following list is a sampling of the many features available.  <u>*Click on t
     ![colors](img/Displays/colors.png ':size=350')
 
 - Etc.  Refer to the side menu for the full list of topics.
-
-### Support
-
-- [Discussion list](https://groups.google.com/forum/#!forum/owlcms)  If you wish to discuss the program or ask questions, please add yourself to this discussion [group](https://groups.google.com/forum/#!forum/owlcms).  You can withdraw at any time.
-- [Issues and Feature Requests](https://github.com/jflamy/owlcms4/issues)  See the Project Board below to see what we are working on.
-- [Project board](https://github.com/users/jflamy/projects/4/views/1) This shows what we are working on, and our work priorities.  Check here first, we may actually already be working on it

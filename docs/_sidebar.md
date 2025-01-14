@@ -29,6 +29,7 @@
 * Scoreboards and Results
   * [Scoreboards](Displays)
   * [Result Documents](ResultDocuments)
+* [Getting Support](Support)
 * Video
   * [OBS Setup](OBS)
   * [Streaming on Facebook](Streaming)

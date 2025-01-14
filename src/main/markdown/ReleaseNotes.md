@@ -1,8 +1,7 @@
-> [!CAUTION]
+> [!WARNING]
 >
-> - This is an **alpha release**, used for validating new features.  *Some features are likely to be incomplete or non-functional*.
-> - **Alpha releases are not normally used in actual competitions.** 
-> - Export your current database before updating if it contains important data.
+> - This is a **beta release**, used for testing and translation. ***Some features could be non-functional***.
+> - Beta releases are **not** normally used in actual competitions, except when a new feature is required. Use extreme care in testing if you intend to do so.
 
 | Introducing the Owlcms Control Panel                         |
 | ------------------------------------------------------------ |
@@ -10,11 +9,8 @@
 
 Version Log
 
+- 55.0.0-beta02: Minor fixes to the documentation
 - 55.0.0-beta01: Added per-session explicit override of clean & jerk break duration
-- 55.0.0-alpha05: Tweaks to the control panel installation instructions
-- 55.0.0-alpha04: Updated the Mac instructions for correct DMG drag description
-- 55.0.0-alpha04: Removed obsolete Procfile and system.properties files from packaging
-- 55.0.0-alpha03: Updated the Mac and Windows instructions to use the Control Panel
 
 **New In This Release**
 
