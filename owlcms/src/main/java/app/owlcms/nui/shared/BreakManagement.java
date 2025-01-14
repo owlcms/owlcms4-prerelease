@@ -233,9 +233,13 @@ public class BreakManagement extends BaseContent implements SafeEventBusRegistra
 				computeDefaultTimeValues();
 			}
 			CountdownType mapBreakTypeToCountdownType = mapBreakTypeToDurationValue(bType);
-			// logger.debug("setting countdown {} ignored={}", mapBreakTypeToCountdownType);
 			setCountdownTypeValue(mapBreakTypeToCountdownType);
 			setBreakValue(bType);
+			if (bType == BreakType.FIRST_CJ) {
+				fixCJBreakDuration();
+			} else {
+				setDurationField(DEFAULT_DURATION);
+			}
 			setBreakType(bType);
 			this.startCountdown.setEnabled(true);
 		});
@@ -257,6 +261,17 @@ public class BreakManagement extends BaseContent implements SafeEventBusRegistra
 			// computeTimerRemainingFromFields(CountdownType.TARGET);
 			// doResetTimer(this.timeRemaining.intValue());
 		});
+	}
+
+	public void fixCJBreakDuration() {
+		if (countdownRadios.getValue() == BreakType.FIRST_CJ) {
+			Group group2 = OwlcmsSession.getFop().getGroup();
+			if (group2 != null) {
+				int computedCJBreakDuration = group2.getCleanJerkBreakMinutes();
+				setDurationField(Duration.ofMinutes(computedCJBreakDuration));
+			} else {
+			}
+		}
 	}
 
 	private void assembleDialog(VerticalLayout dialogLayout) {
@@ -310,7 +325,7 @@ public class BreakManagement extends BaseContent implements SafeEventBusRegistra
 	}
 
 	private void computeDefaultTimeValues() {
-		// logger.debug("setting default duration as default {}", LoggerUtils.whereFrom());
+		logger.debug("setting default duration as default {} {}", LoggerUtils.whereFrom(), this.fop.getBreakType());
 		setDurationField(DEFAULT_DURATION);
 
 		if (this.fop.getGroup() != null
@@ -785,11 +800,14 @@ public class BreakManagement extends BaseContent implements SafeEventBusRegistra
 
 	private void inferCountdownFromStage() {
 		switch (this.fop.getCurrentStage()) {
-			case CLEANJERK -> this.countdownRadios.setValue(BreakType.FIRST_CJ);
+			case CLEANJERK -> {
+				this.countdownRadios.setValue(BreakType.FIRST_CJ);
+			}
 			case SNATCH -> this.countdownRadios.setValue(BreakType.FIRST_SNATCH);
 			default -> throw new IllegalArgumentException("Unexpected value: " + this.fop.getCurrentStage());
 		}
 		this.durationField.setValue(DEFAULT_DURATION);
+		fixCJBreakDuration();
 		this.setCountdownType(CountdownType.DURATION);
 	}
 
@@ -989,10 +1007,16 @@ public class BreakManagement extends BaseContent implements SafeEventBusRegistra
 				// default value
 				switch (this.fop.getBreakType()) {
 					case BEFORE_INTRODUCTION -> this.countdownRadios.setValue(BreakType.BEFORE_INTRODUCTION);
-					case FIRST_CJ -> this.countdownRadios.setValue(BreakType.FIRST_CJ);
+					case FIRST_CJ -> {
+						this.countdownRadios.setValue(BreakType.FIRST_CJ);
+						fixCJBreakDuration();
+					}
 					case FIRST_SNATCH -> this.countdownRadios.setValue(BreakType.FIRST_SNATCH);
-					case GROUP_DONE -> this.countdownRadios.setValue(BreakType.FIRST_CJ);
-					case SNATCH_DONE -> this.countdownRadios.setValue(BreakType.FIRST_CJ);
+					case GROUP_DONE -> this.countdownRadios.setValue(BreakType.BEFORE_INTRODUCTION);
+					case SNATCH_DONE -> {
+						this.countdownRadios.setValue(BreakType.FIRST_CJ);
+						fixCJBreakDuration();
+					}
 					default -> inferCountdownFromStage();
 				}
 			}
@@ -1082,7 +1106,7 @@ public class BreakManagement extends BaseContent implements SafeEventBusRegistra
 	}
 
 	private void setDurationField(Duration duration) {
-		// logger.debug("{} {}", duration, LoggerUtils.whereFrom());
+		logger.debug("=========== {} {}", duration, LoggerUtils.whereFrom());
 		this.durationField.setValue(duration);
 	}
 

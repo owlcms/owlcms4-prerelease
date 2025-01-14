@@ -27,9 +27,14 @@ import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.FlexLayout.FlexDirection;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.tabs.TabSheet;
+import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.textfield.TextFieldVariant;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.binder.BinderValidationStatus;
+import com.vaadin.flow.data.binder.Result;
+import com.vaadin.flow.data.binder.ValueContext;
+import com.vaadin.flow.data.converter.Converter;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.data.validator.StringLengthValidator;
 
@@ -48,7 +53,7 @@ public class SessionEditingFormFactory
         extends OwlcmsCrudFormFactory<Group>
         implements CustomFormFactory<Group> {
 
-	private static final String HEIGHT = "37rem";
+	private static final String HEIGHT = "32rem";
 	@SuppressWarnings("unused")
 	private Logger logger = (Logger) LoggerFactory.getLogger(SessionEditingFormFactory.class);
 	private SessionContent origin;
@@ -172,7 +177,7 @@ public class SessionEditingFormFactory
 	private FlexLayout createTabSheets(Component footer, List<Platform> allPlatforms) {
 		TabSheet ts = new TabSheet();
 
-		FormLayout groupLayout = groupLayout(allPlatforms);
+		FormLayout groupLayout = sessionLayout(allPlatforms);
 		FormLayout officialsLayout = officialsLayout();
 		FormLayout juryLayout = juryLayout();
 
@@ -203,7 +208,7 @@ public class SessionEditingFormFactory
 		return mainLayout;
 	}
 
-	private FormLayout groupLayout(List<Platform> allPlatforms) {
+	private FormLayout sessionLayout(List<Platform> allPlatforms) {
 		FormLayout formLayout = new FormLayout();
 		TextField nameField = new TextField(Translator.translate("Name"));
 		formLayout.add(nameField);
@@ -262,6 +267,29 @@ public class SessionEditingFormFactory
 				weighInTimeField.setValue(e.getValue().minusHours(2));
 			}
 		});
+
+		addRuler(formLayout);
+		NumberField breakDurationField = new NumberField(Translator.translate("CJ_BreakDuration"));
+		breakDurationField.setPlaceholder(Translator.translate("CJ_BreakDurationPlaceHolder"));
+		breakDurationField.addThemeVariants(TextFieldVariant.LUMO_ALIGN_RIGHT);
+		formLayout.add(breakDurationField);
+		
+		// Add a custom converter to handle Integer values and null representation
+		binder.forField(breakDurationField).withConverter(
+		        new Converter<Double, Integer>() {
+			        @Override
+			        public Result<Integer> convertToModel(Double value, ValueContext context) {
+				        if (value == null) {
+					        return Result.ok(null);
+				        }
+				        return Result.ok(value.intValue());
+			        }
+
+			        @Override
+			        public Double convertToPresentation(Integer value, ValueContext context) {
+				        return value == null ? null : value.doubleValue();
+			        }
+		        }).bind(Group::getCleanJerkBreakDuration, Group::setCleanJerkBreakDuration);
 
 		return formLayout;
 	}

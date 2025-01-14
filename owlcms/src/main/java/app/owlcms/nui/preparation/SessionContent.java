@@ -265,6 +265,7 @@ public class SessionContent extends BaseContent implements CrudListener<Group>, 
 		grid.addColumn(Group::getName).setHeader(Translator.translate("Name")).setComparator(Group::compareTo).setAutoWidth(true);
 		grid.addColumn(Group::getDescription).setHeader(Translator.translate("Group.Description")).setAutoWidth(true);
 		grid.addColumn(Group::size).setHeader(Translator.translate("GroupSize")).setTextAlign(ColumnTextAlign.CENTER);
+		grid.addColumn(Group::getCleanJerkBreakMinutes).setHeader(Translator.translate("CJ_BreakDuration")).setTextAlign(ColumnTextAlign.CENTER);
 		grid.addColumn(LocalDateTimeField.getRenderer(Group::getWeighInTime, this.getLocale()))
 		        .setHeader(Translator.translate("WeighInTime")).setComparator(Group::compareToWeighIn);
 		grid.addColumn(LocalDateTimeField.getRenderer(Group::getCompetitionTime, this.getLocale()))

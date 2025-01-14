@@ -46,8 +46,10 @@ import app.owlcms.data.agegroup.AgeGroup;
 import app.owlcms.data.athlete.Athlete;
 import app.owlcms.data.athlete.AthleteRepository;
 import app.owlcms.data.athleteSort.AbstractLifterComparator;
+import app.owlcms.data.competition.Competition;
 import app.owlcms.data.config.Config;
 import app.owlcms.data.platform.Platform;
+import app.owlcms.fieldofplay.FieldOfPlay;
 import app.owlcms.init.OwlcmsSession;
 import app.owlcms.utils.DateTimeUtils;
 import app.owlcms.utils.IdUtils;
@@ -283,7 +285,6 @@ public class Group implements Comparable<Group> {
 	@Column(columnDefinition = "boolean default false")
 	private boolean done;
 	@Id
-	// @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String jury1;
 	private String jury2;
@@ -303,6 +304,8 @@ public class Group implements Comparable<Group> {
 	private String weighIn1;
 	private String weighIn2;
 	private LocalDateTime weighInTime;
+	@Column(columnDefinition = "integer default null")
+	private Integer cleanJerkBreakDuration;
 	@Transient
 	@JsonIgnore
 	Pattern pattern = Pattern.compile("(\\d+)\\s+(\\w+)");
@@ -1236,5 +1239,58 @@ public class Group implements Comparable<Group> {
 		setHourFormatter(DateTimeFormatter
 		        .ofLocalizedTime(FormatStyle.SHORT)
 		        .withLocale(locale));
+	}
+
+	public Integer getCleanJerkBreakDuration() {
+		return cleanJerkBreakDuration;
+	}
+
+	public void setCleanJerkBreakDuration(Integer cleanJerkBreakDuration) {
+		this.cleanJerkBreakDuration = cleanJerkBreakDuration;
+	}
+
+	public int cjBreakDuration(FieldOfPlay fieldOfPlay) {
+		Group cGroup = fieldOfPlay.getGroup();
+		int millisRemaining;
+		Competition cCur = Competition.getCurrent();
+		Integer cleanJerkBreakDuration = cGroup.getCleanJerkBreakDuration();
+		if (cleanJerkBreakDuration != null) {
+			millisRemaining = cleanJerkBreakDuration * 60 * 1000;
+		} else {
+			millisRemaining = 10 * 60 * 1000;
+			int size = fieldOfPlay.getLiftingOrder().size();
+			if (cCur.getShorterBreakMin() != null && size > cCur.getShorterBreakMin()) {
+				millisRemaining = (cCur.getShorterBreakDuration() != null ? cCur.getShorterBreakDuration() : 10) * 60
+				        * 1000;
+			} else if (cCur.getLongerBreakMax() != null && size < cCur.getLongerBreakMax()) {
+				millisRemaining = (cCur.getLongerBreakDuration() != null ? cCur.getLongerBreakDuration() : 10) * 60
+				        * 1000;
+			}
+		}
+		return millisRemaining;
+	}
+
+	@Transient
+	@JsonIgnore
+	public int getCleanJerkBreakMinutes() {
+		int minutesRemaining = 0;
+		Competition cCur = Competition.getCurrent();
+		Integer cleanJerkBreakDuration = this.getCleanJerkBreakDuration();
+		if (cleanJerkBreakDuration != null) {
+			minutesRemaining = cleanJerkBreakDuration;
+		} else {
+			minutesRemaining = 10;
+			List<Athlete> athletes = this.getAthletes();
+			int size = athletes != null ? athletes.size() : 0;
+			if (cCur.getShorterBreakMin() != null && size > cCur.getShorterBreakMin()) {
+				minutesRemaining = (cCur.getShorterBreakDuration() != null ? cCur.getShorterBreakDuration() : 10);
+			} else if (cCur.getLongerBreakMax() != null && size < cCur.getLongerBreakMax()) {
+				minutesRemaining = (cCur.getLongerBreakDuration() != null ? cCur.getLongerBreakDuration() : 10);
+			}
+		}
+		return minutesRemaining;
+	}
+
+	public void setCleanJerkBreakMinutes(int ignored) {
 	}
 }

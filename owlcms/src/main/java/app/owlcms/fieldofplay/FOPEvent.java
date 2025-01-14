@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import app.owlcms.data.athlete.Athlete;
 import app.owlcms.data.category.Category;
 import app.owlcms.data.group.Group;
+import app.owlcms.data.jpa.JPAService;
 import app.owlcms.init.OwlcmsSession;
 import app.owlcms.uievents.BreakType;
 import app.owlcms.uievents.CeremonyType;
@@ -627,7 +628,15 @@ public class FOPEvent {
 		}
 
 		public Group getGroup() {
-			return this.group;
+			// force reloading the group.
+			if (group == null) {
+				return null;
+			}
+			Group updatedGroup = JPAService.runInTransaction(em -> {
+				Group updated = em.find(Group.class, this.group.getId());
+				return updated;
+			});
+			return updatedGroup;
 		}
 
 		@Override

@@ -2181,14 +2181,7 @@ public class FieldOfPlay implements IUnregister {
 		if (CompetitionSimulator.isRunning()) {
 			millisRemaining = 10 * 1000;
 		} else {
-			millisRemaining = 10 * 60 * 1000;
-			if (cCur.getShorterBreakMin() != null && this.liftingOrder.size() > cCur.getShorterBreakMin()) {
-				millisRemaining = (cCur.getShorterBreakDuration() != null ? cCur.getShorterBreakDuration() : 10) * 60
-				        * 1000;
-			} else if (cCur.getLongerBreakMax() != null && this.liftingOrder.size() < cCur.getLongerBreakMax()) {
-				millisRemaining = (cCur.getLongerBreakDuration() != null ? cCur.getLongerBreakDuration() : 10) * 60
-				        * 1000;
-			}
+			millisRemaining = group.cjBreakDuration(this);
 			if (millisRemaining <= 0) {
 				return;
 			}
@@ -2286,10 +2279,10 @@ public class FieldOfPlay implements IUnregister {
 		}
 		List<Athlete> nLeaders = new ArrayList<Athlete>(getLeaders().size());
 		for (Athlete a : getLeaders()) {
-			// the leaders come from the medals computation.  This does not reflect the last requested weight changes
+			// the leaders come from the medals computation. This does not reflect the last requested weight changes
 			// fetch the most up-to-date info for athletes in the current group.
 			Athlete found = null;
-			for (Athlete curGroupAthlete: getLiftingOrder()) {
+			for (Athlete curGroupAthlete : getLiftingOrder()) {
 				if (curGroupAthlete.getId().equals(a.getId())) {
 					found = curGroupAthlete;
 					break;
