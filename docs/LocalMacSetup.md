@@ -8,7 +8,7 @@
   
   - If you have a **newer M1/M2/M3/M4 mac**, get the installation package that ends with **`_arm64.dmg`**.
   
-  - If you have an **older Intel mac**, get instead the installation package that ends with **`_amd64.dmg`.**
+  - If you have an **older Intel mac**, get instead the installation package that ends with **`_intel.dmg`.**
   
   
   ![10](nimg/1120Mac/10.png)
