@@ -15,8 +15,8 @@ Yet it is simple enough to setup that you can use it to run a club or regional c
 
 ### Features, Documentation and Installation
 - See the prerelease [Web Site](https://owlcms.github.io/owlcms4-prerelease/#) for a full overview</u>.
-- Refer to the [Installation Overview](https://owlcms.github.io/owlcms4-prerelease/#/InstallationOverview) and
-to the following [Downloads](https://owlcms.github.io/owlcms4-prerelease/#/Downloads) page for the various setups and releases.
+- To install the software locally on a computer, see the [Control Panel Installation Instructions](https://owlcms.github.io/owlcms4-prerelease/#/LocalDownloads.md) and the instructions for using the [owlcms Control Panel](https://owlcms.github.io/owlcms4-prerelease/#/LocalControlPanel.md).
+- To install the software in the cloud, see [this page](https://owlcms.github.io/owlcms4-prerelease/#/Fly)
 
 ### Help, Issues, Feature Requests
 
