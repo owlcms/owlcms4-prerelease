@@ -1,7 +1,7 @@
 > [!WARNING]
 >
-> - This is a **beta release**, used for testing and translation. ***Some features could be non-functional***.
-> - Beta releases are **not** normally used in actual competitions, except when a new feature is required. Use extreme care in testing if you intend to do so.
+> - This is a release candidate [(see definition)](https://en.wikipedia.org/wiki/Software_release_life_cycle#Release_candidate), used for final public testing and translation. *It is still a preliminary release*
+> - You should test all releases, with actual data, *several days* before a competition. This is especially important when considering the use of a release candidate.
 
 | Introducing the Owlcms Control Panel                         |
 | ------------------------------------------------------------ |
@@ -9,6 +9,7 @@
 
 Version Log
 
+- 55.0.0-rc01: Mac installer for Intel mac has been renamed, adjusted documentation
 - 55.0.0-beta02: Minor fixes to the documentation
 - 55.0.0-beta01: Added per-session explicit override of clean & jerk break duration
 
