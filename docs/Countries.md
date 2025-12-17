@@ -1,4 +1,3 @@
-<!-- markdownlint-disable -->
 ## Countries
 
 The following list has been compiled from usage data gathered since January 2024.  The determination that the system was used at a federation event is based on social media information.
