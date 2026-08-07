@@ -36,14 +36,13 @@ There are several building blocks to such a setup
 
 1. Some devices require frequent user input (Marshal, Secretary, Announcer). Laptops or computers with a keyboard are needed for that.
 2. It is common to use a tablet for the timekeeper
-3. In a large competition, the main laptop is normally separate, and typically handles the data entry and results dutis as well as running OWLCMS
-4. The various displays and TVs need a signal.  With owlcms, the signal comes from a web browser.  You can use any old laptop to provide the signal, or smaller devices like Raspberry Pi, miniPCs or NUCs
-5. You can extend the display from laptops. For example, use the marshal computer to display a scoreboard for coaches via the auxiliary HDMI port.
-6. Video splitters.  Often it is possible to share the output from a PC and send it to several TVs.  Scoreboards are often replicated this way.  
+3. The various displays and TVs need a signal.  With owlcms, the signal comes from a web browser.  You can use any old laptop to provide the signal, or smaller devices like Raspberry Pi.
+4. You can extend the display from laptops. For example, have the marshall work on the laptop screen and provide the warmup room scoreboard on a connected monitor using the "exxtended desktop" feature that all laptops provide.
+5. Video splitters.  Sometimes it is possible to share the output from a PC and send it to several TVs.  Scoreboards are often replicated this way.  
 
-The full setup then looks like this 
+The setup then looks like this.
 
-![setup-full](img/EquipmentSetup/setup-full-5433871.svg)
+![setup-local](img/EquipmentSetup/setup-local.svg)
 
 
 ## Computer Requirements
